@@ -1,31 +1,39 @@
 footer {
   background-color: var(--color-dark);
   color: var(--color-light);
-  font-size: var(--body-font-size-s);
+  font-size: 18px;
+  line-height: 28px;
 }
 
 footer .footer > div {
   margin: auto;
   max-width: var(--content-max-width);
-  padding: 64px 24px 24px;
+  padding: 64px 16px;
 }
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 64px 32px 24px;
+    padding: 64px 32px;
   }
 }
 
 footer .footer > div > div {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 48px;
+  text-align: center;
+}
+
+@media (width >= 600px) {
+  footer .footer > div > div {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
 }
 
 @media (width >= 900px) {
   footer .footer > div > div {
     grid-template-columns: repeat(4, 1fr);
-    gap: 48px;
   }
 }
 
@@ -33,14 +41,15 @@ footer .footer h3 {
   font-family: var(--heading-font-family);
   color: var(--color-gold);
   font-size: 20px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   letter-spacing: 0.05em;
 }
 
 footer .footer p {
   margin: 4px 0;
-  line-height: 1.6;
+  line-height: 28px;
   color: rgb(255 246 229 / 90%);
+  font-size: 18px;
 }
 
 footer .footer a:any-link {
