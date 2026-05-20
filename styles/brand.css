@@ -1,0 +1,41 @@
+:root {
+  --heading-font-family: "Cinzel Decorative", serif;
+  --body-font-family: "Inter", system-ui, sans-serif;
+  --nav-font-family: "Noto Sans Devanagari", sans-serif;
+  --color-primary: #e62200;
+  --color-secondary: #c41f04;
+  --color-gold: #ffd700;
+  --color-dark: #1a1a1a;
+  --color-light: #fff6e5;
+  --color-text: #171717;
+  --color-text-muted: #6b7280;
+  --color-divider: #e2e8f0;
+  --color-white: #fff;
+  --color-overlay: rgb(26 26 26 / 80%);
+  --background-color: var(--color-light);
+  --text-color: var(--color-text);
+  --link-color: var(--color-primary);
+  --link-hover-color: var(--color-secondary);
+  --heading-size-xxl: 48px;
+  --heading-size-xl: 36px;
+  --heading-size-l: 24px;
+  --heading-size-m: 20px;
+  --heading-size-s: 18px;
+  --heading-size-xs: 16px;
+  --section-padding: 48px;
+  --nav-height: 80px;
+  --content-max-width: 1200px;
+  --border-radius: 16px;
+  --border-radius-sm: 8px;
+}
+
+@media (width <= 899px) {
+  :root {
+    --heading-size-xxl: 30px;
+    --heading-size-xl: 24px;
+    --heading-size-l: 20px;
+    --heading-size-m: 18px;
+    --nav-height: 64px;
+    --section-padding: 32px;
+  }
+}

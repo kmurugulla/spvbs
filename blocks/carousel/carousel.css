@@ -1,0 +1,98 @@
+.carousel-container .carousel-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel .carousel-slides {
+  position: relative;
+  width: 100%;
+}
+
+.carousel .carousel-slide {
+  width: 100%;
+}
+
+.carousel .carousel-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (width >= 900px) {
+  .carousel .carousel-slide img {
+    height: 600px;
+  }
+}
+
+.carousel .carousel-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.carousel .carousel-prev,
+.carousel .carousel-next {
+  pointer-events: auto;
+  background: rgb(255 215 0 / 90%);
+  color: var(--color-primary);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carousel .carousel-prev:hover,
+.carousel .carousel-next:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.carousel .carousel-prev::before {
+  content: '\2039';
+  font-size: 24px;
+}
+
+.carousel .carousel-next::before {
+  content: '\203A';
+  font-size: 24px;
+}
+
+.carousel .carousel-dots {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  list-style: none;
+  margin: 0;
+  gap: 8px;
+}
+
+.carousel .carousel-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--color-gold);
+  background: var(--color-divider);
+  font-size: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.carousel .carousel-dots button:disabled {
+  background: var(--color-primary);
+  cursor: default;
+}

@@ -1,9 +1,10 @@
-/* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(8px);
   width: 100%;
-  z-index: 2;
+  z-index: 999;
   position: fixed;
+  border-bottom: 1px solid var(--color-divider);
 }
 
 header nav {
@@ -18,7 +19,7 @@ header nav {
   max-width: 1248px;
   height: var(--nav-height);
   padding: 0 24px;
-  font-family: var(--body-font-family);
+  font-family: var(--nav-font-family);
 }
 
 header nav[aria-expanded='true'] {
@@ -28,11 +29,12 @@ header nav[aria-expanded='true'] {
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100dvh;
+  background-color: var(--color-white);
 }
 
 @media (width >= 900px) {
   header .nav-wrapper {
-    position: relative;
+    position: fixed;
   }
 
   header nav {
@@ -55,7 +57,15 @@ header nav p {
 }
 
 header nav a:any-link {
-  color: currentcolor;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
 /* hamburger */
@@ -72,8 +82,8 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: inherit;
+  background-color: transparent;
+  color: var(--color-primary);
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
@@ -142,15 +152,26 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
+  flex-basis: 200px;
+  font-family: var(--heading-font-family);
+  font-size: 18px;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.2;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+}
+
+header nav .nav-brand a:any-link {
+  color: var(--color-primary);
+  font-family: var(--heading-font-family);
 }
 
 header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-gold);
 }
 
 /* sections */
@@ -224,8 +245,9 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 24px;
+    gap: 32px;
     margin: 0;
+    align-items: center;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
@@ -245,20 +267,10 @@ header nav .nav-sections ul > li > ul > li {
     width: 200px;
     top: 150%;
     padding: 16px;
-    background-color: var(--light-color);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
     white-space: initial;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
@@ -266,7 +278,25 @@ header nav .nav-sections ul > li > ul > li {
   }
 }
 
-/* tools */
+/* tools (Donate Now button) */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+header nav .nav-tools a:any-link {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--nav-font-family);
+  padding: 8px 24px;
+  border-radius: 9999px;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+header nav .nav-tools a:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
+  color: var(--color-white);
 }

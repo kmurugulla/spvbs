@@ -5,23 +5,31 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  padding: 80px 24px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero h1 {
-  max-width: 1200px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  color: var(--background-color);
+  color: var(--color-white);
+  text-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+}
+
+.hero p {
+  color: var(--color-white);
+  text-shadow: 0 1px 4px rgb(0 0 0 / 40%);
 }
 
 .hero picture {
   position: absolute;
   z-index: -1;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
 }
 
 .hero img {
@@ -32,6 +40,40 @@
 
 @media (width >= 900px) {
   .hero {
-    padding: 40px 32px;
+    padding: 120px 32px;
+    min-height: 500px;
   }
+}
+
+/* Variant: about - dark hero with portrait */
+.hero.about {
+  background-color: var(--color-dark);
+  min-height: 300px;
+  padding: 60px 24px;
+}
+
+.hero.about h1 {
+  color: var(--color-gold);
+}
+
+.hero.about p {
+  color: rgb(255 255 255 / 80%);
+  font-family: var(--nav-font-family);
+  font-size: var(--heading-size-m);
+}
+
+.hero.about img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-gold);
+  position: static;
+}
+
+.hero.about picture {
+  position: static;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
 }

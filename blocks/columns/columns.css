@@ -31,3 +31,24 @@
     order: unset;
   }
 }
+
+/* Variant: video */
+.columns.video .columns-img-col img {
+  border-radius: var(--border-radius-sm);
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+/* Variant: contact */
+.columns.contact h2 {
+  text-align: left;
+}
+
+.columns.contact a:any-link {
+  color: var(--color-primary);
+}
+
+/* Variant: donate */
+.columns.donate h3 {
+  color: var(--color-primary);
+}
