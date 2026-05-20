@@ -1,1 +1,15 @@
-/* add global styles that can be loaded post LCP here */
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Dark section paragraph text */
+main .section.dark p {
+  color: rgb(255 255 255 / 80%);
+}
+
+main .section.dark .default-content-wrapper blockquote {
+  background: rgb(24 23 22);
+  border-left-color: var(--color-gold);
+  color: var(--color-gold);
+}

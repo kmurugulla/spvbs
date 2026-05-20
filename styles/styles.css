@@ -130,12 +130,31 @@ a:hover {
   text-decoration: underline;
 }
 
-/* buttons */
-p.button-wrapper {
-  margin: 12px 0;
+/* buttons - reset EDS auto-button to plain link style */
+main .button-container {
+  display: inline;
 }
 
-a.button:any-link,
+main a.button:any-link {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: var(--link-color);
+  font: inherit;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+  white-space: normal;
+  overflow: visible;
+}
+
+main a.button:hover {
+  color: var(--link-hover-color);
+}
+
+/* Primary button - explicit opt-in via .button.primary or standalone CTA sections */
+a.button.primary:any-link,
 button.button {
   box-sizing: border-box;
   display: inline-flex;
@@ -161,8 +180,8 @@ button.button {
   color: var(--color-white);
 }
 
-a.button:hover,
-a.button:focus-visible,
+a.button.primary:hover,
+a.button.primary:focus-visible,
 button.button:hover,
 button.button:focus-visible {
   border-color: var(--color-secondary);
